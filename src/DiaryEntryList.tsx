@@ -13,6 +13,11 @@ const DiaryEntryList: React.FC = () => {
 
     const [selectedEntry, setSelectedEntry] = useState<DiaryEntry | null>(null)
 
+    const sortedEntries = Object.entries(entries).sort(
+        ([dateA], [dateB]) =>
+            new Date(dateB).getTime() - new Date(dateA).getTime()
+    )
+
     return (
         <div>
             <h2>Diary Entries</h2>
@@ -33,7 +38,7 @@ const DiaryEntryList: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.entries(entries).map(([date, entry]) => (
+                    {sortedEntries.map(([date, entry]) => (
                         <tr
                             key={date}
                             onClick={() => {
