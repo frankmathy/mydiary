@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-type DiaryEntry = {
+export type DiaryEntry = {
   date: string;
   entry: string;
 };
