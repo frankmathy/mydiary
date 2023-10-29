@@ -1,11 +1,11 @@
 import './App.css';
-import DiaryEditor from './DiaryEditor';
+import DiaryEntryList from './DiaryEntryList';
 
 function App() {
   return (
     <div className="App">
       <body>
-        <DiaryEditor/>
+        <DiaryEntryList/>
       </body>
     </div>
   );
